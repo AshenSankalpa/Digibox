@@ -1,0 +1,81 @@
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const causeRoutes = require("./routes/causeRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const gsRoutes = require("./routes/gsRoutes");
+const dsRoutes = require("./routes/dsRoutes");
+const donorRoutes = require("./routes/donorRoutes");
+const profileRoutes = require("./routes/profileRoutes");
+const User = require("./models/userModel");
+const bcrypt = require("bcryptjs");
+
+dotenv.config();
+
+const app = express();
+
+// Increase payload limit for PDF documents
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
+
+// Connect to DB and then create admin if not exists
+connectDB().then(() => {
+  createAdminAccount();
+});
+
+// Function to create default admin
+async function createAdminAccount() {
+  try {
+    const adminExists = await User.findOne({ role: "admin" });
+
+    if (!adminExists) {
+      const hashedPassword = await bcrypt.hash("Admin@123", 10);
+
+      await User.create({
+        username: "admin",
+        email: "admin@example.com",
+        password: hashedPassword,
+        role: "admin",
+      });
+
+      console.log("Default admin created: admin@example.com / Admin@123");
+    } else {
+      console.log("Admin account already exists");
+    }
+  } catch (error) {
+    console.error("Error creating admin account:", error);
+  }
+}
+const path = require("path");
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+
+// Middleware
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST","PUT","DELETE"],
+  credentials: true,
+}));
+
+app.use(express.json());
+app.use("/uploads", express.static("uploads"));
+
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/cause", causeRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/gs", gsRoutes);
+app.use("/api/ds", dsRoutes);
+app.use("/api/donor", donorRoutes);
+app.use("/api/profile", profileRoutes);
+
+
+
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
