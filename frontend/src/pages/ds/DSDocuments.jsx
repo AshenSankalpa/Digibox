@@ -10,7 +10,7 @@ const DSDocuments = () => {
 
   const fetchDocuments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/ds/documents", { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/ds/documents", { headers: { Authorization: `Bearer ${token}` } });
       setDocs(res.data);
     } catch (err) { console.error("Error fetching documents:", err); }
   };
@@ -30,7 +30,7 @@ const DSDocuments = () => {
                   DS Officer: {doc.dsOfficer?.username || "N/A"} | Approved on: {doc.updatedAt ? new Date(doc.updatedAt).toLocaleDateString() : "N/A"}
                 </p>
               </div>
-              <a href={`http://localhost:5000${doc.dsDocument}`} target="_blank" rel="noreferrer" className="text-primary text-sm underline">View PDF</a>
+              <a href={`https://digibox-nipy.onrender.com${doc.dsDocument}`} target="_blank" rel="noreferrer" className="text-primary text-sm underline">View PDF</a>
             </div>
           ))}
         </div>

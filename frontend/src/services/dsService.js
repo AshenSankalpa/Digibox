@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/ds",
+  baseURL: "https://digibox-nipy.onrender.com/api/ds",
 });
 
 // Attach token automatically

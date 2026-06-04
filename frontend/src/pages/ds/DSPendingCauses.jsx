@@ -325,7 +325,7 @@ const DSPendingCauses = () => {
                     <td className="p-3 text-center">LKR {Number(c.requiredAmount).toLocaleString()}</td>
                     <td className="p-3 text-center">
                       <a
-                        href={`http://localhost:5000${c.evidenceFile}`}
+                        href={`https://digibox-nipy.onrender.com${c.evidenceFile}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-primary underline hover:text-primary-light"
@@ -404,7 +404,7 @@ const DSPendingCauses = () => {
               <div className="border-t border-gray-600 pt-3">
                 <p className="text-gray-300 font-semibold mb-2">📄 Evidence File</p>
                 <a
-                  href={`http://localhost:5000${selectedCause.evidenceFile}`}
+                  href={`https://digibox-nipy.onrender.com${selectedCause.evidenceFile}`}
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary underline hover:text-primary-light"

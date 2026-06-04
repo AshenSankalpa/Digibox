@@ -13,7 +13,7 @@ const DSResetPassword = () => {
     setIsResetting(true);
     try {
       await axios.put(
-        "http://localhost:5000/api/ds/reset-password",
+        "https://digibox-nipy.onrender.com/api/ds/reset-password",
         { password },
         { headers: { Authorization: `Bearer ${token}` } }
       );

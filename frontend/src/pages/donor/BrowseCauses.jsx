@@ -63,7 +63,7 @@ const BrowseCauses = () => {
       if (debouncedSearch) params.append("search", debouncedSearch);
       if (category !== "All") params.append("category", category);
 
-      const res = await axios.get(`http://localhost:5000/api/donor/causes?${params}`, {
+      const res = await axios.get(`https://digibox-nipy.onrender.com/api/donor/causes?${params}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

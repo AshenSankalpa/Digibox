@@ -78,7 +78,7 @@ const Donate = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get(`http://localhost:5000/api/donor/causes/${causeId}`, {
+      const res = await axios.get(`https://digibox-nipy.onrender.com/api/donor/causes/${causeId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -132,7 +132,7 @@ const Donate = () => {
     try {
       setDonating(true);
       const res = await axios.post(
-        `http://localhost:5000/api/donor/donate/${causeId}`,
+        `https://digibox-nipy.onrender.com/api/donor/donate/${causeId}`,
         {
           amount: parseFloat(donationAmount),
           paymentMethod,

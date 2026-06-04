@@ -22,9 +22,9 @@ const CreatorDashboard = () => {
     const fetchData = async () => {
       try {
         const [statsRes, recentRes, chartRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/cause/stats", { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get("http://localhost:5000/api/cause/my-causes", { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get("http://localhost:5000/api/cause/analytics/monthly", { headers: { Authorization: `Bearer ${token}` } })
+          axios.get("https://digibox-nipy.onrender.com/api/cause/stats", { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get("https://digibox-nipy.onrender.com/api/cause/my-causes", { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get("https://digibox-nipy.onrender.com/api/cause/analytics/monthly", { headers: { Authorization: `Bearer ${token}` } })
         ]);
 
         setStats(statsRes.data);

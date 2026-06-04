@@ -32,7 +32,7 @@ const GSDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const params = status !== "all" ? { status } : {};
-      const res = await fetch(`http://localhost:5000/api/gs/all-causes?${new URLSearchParams(params)}`, {
+      const res = await fetch(`https://digibox-nipy.onrender.com/api/gs/all-causes?${new URLSearchParams(params)}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

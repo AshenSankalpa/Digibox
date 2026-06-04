@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/donor",
+  baseURL: "https://digibox-nipy.onrender.com/api/donor",
   withCredentials: true
 });
 

@@ -78,7 +78,7 @@ const CauseDetails = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get(`http://localhost:5000/api/donor/causes/${id}`, {
+      const res = await axios.get(`https://digibox-nipy.onrender.com/api/donor/causes/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -125,7 +125,7 @@ const CauseDetails = () => {
     try {
       setDonating(true);
       const res = await axios.post(
-        `http://localhost:5000/api/donor/donate/${id}`,
+        `https://digibox-nipy.onrender.com/api/donor/donate/${id}`,
         {
           amount: parseFloat(donationAmount),
           paymentMethod,
@@ -318,7 +318,7 @@ const CauseDetails = () => {
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold text-primary mb-3">Supporting Evidence</h3>
                   <a
-                    href={`http://localhost:5000${cause.evidenceFile}`}
+                    href={`https://digibox-nipy.onrender.com${cause.evidenceFile}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded-lg transition-colors"

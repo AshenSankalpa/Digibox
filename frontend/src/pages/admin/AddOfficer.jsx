@@ -38,8 +38,8 @@ const AddOfficer = () => {
     try {
       const endpoint =
         form.role === "ds"
-          ? "http://localhost:5000/api/admin/add-ds"
-          : "http://localhost:5000/api/admin/add-gs";
+          ? "https://digibox-nipy.onrender.com/api/admin/add-ds"
+          : "https://digibox-nipy.onrender.com/api/admin/add-gs";
 
       const payload =
         form.role === "ds"

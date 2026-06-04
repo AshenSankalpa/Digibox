@@ -39,7 +39,7 @@ const PasswordReset = () => {
 
     setLoading(true);
     try {
-      await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, {
+      await axios.post(`https://digibox-nipy.onrender.com/api/auth/reset-password/${token}`, {
         newPassword: formData.newPassword,
       });
       setSuccess("Password reset successfully! Redirecting to login...");

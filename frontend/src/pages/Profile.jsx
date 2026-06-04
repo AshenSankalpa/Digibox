@@ -36,7 +36,7 @@ const Profile = () => {
       const token = localStorage.getItem("token");
       if (!token) return navigate("/login");
 
-      const res = await axios.get("http://localhost:5000/api/profile", { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/profile", { headers: { Authorization: `Bearer ${token}` } });
       if (res.data.success) {
         setProfile(res.data.user);
         setFormData({ username: res.data.user.username, email: res.data.user.email });
@@ -58,7 +58,7 @@ const Profile = () => {
     reader.onloadend = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.put("http://localhost:5000/api/profile/upload-image", { profileImage: reader.result }, { headers: { Authorization: `Bearer ${token}` } });
+        const res = await axios.put("https://digibox-nipy.onrender.com/api/profile/upload-image", { profileImage: reader.result }, { headers: { Authorization: `Bearer ${token}` } });
         if (res.data.success) {
           setProfile({ ...profile, profileImage: res.data.profileImage });
           setMessage({ type: "success", text: "Profile image updated successfully" });
@@ -78,7 +78,7 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put("http://localhost:5000/api/profile", formData, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.put("https://digibox-nipy.onrender.com/api/profile", formData, { headers: { Authorization: `Bearer ${token}` } });
       if (res.data.success) {
         setProfile({ ...profile, ...res.data.user });
         setEditMode(false);
@@ -100,7 +100,7 @@ const Profile = () => {
     setSaving(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put("http://localhost:5000/api/profile/reset-password", passwordData, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.put("https://digibox-nipy.onrender.com/api/profile/reset-password", passwordData, { headers: { Authorization: `Bearer ${token}` } });
       if (res.data.success) {
         setMessage({ type: "success", text: "Password updated successfully" });
         setPasswordData({ currentPassword: "", newPassword: "", confirmPassword: "" });

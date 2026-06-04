@@ -26,7 +26,7 @@ const DonorDashboard = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get("http://localhost:5000/api/donor/summary", {
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/donor/summary", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

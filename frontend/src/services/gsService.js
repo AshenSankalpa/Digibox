@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/gs",
+  baseURL: "https://digibox-nipy.onrender.com/api/gs",
 });
 export const fetchGSDocuments = () => API.get("/documents");
 

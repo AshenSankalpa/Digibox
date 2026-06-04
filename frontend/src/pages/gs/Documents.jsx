@@ -10,7 +10,7 @@ const Documents = () => {
 
   const fetchDocuments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gs/documents", { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/gs/documents", { headers: { Authorization: `Bearer ${token}` } });
       setDocs(res.data);
     } catch (err) { console.error("Error fetching documents:", err); }
   };
@@ -30,7 +30,7 @@ const Documents = () => {
                   GS Officer: {doc.gsOfficer?.username || "N/A"} | Approved on: {doc.updatedAt ? new Date(doc.updatedAt).toLocaleDateString() : "N/A"}
                 </p>
               </div>
-              <a href={`http://localhost:5000${doc.gsDocument}`} target="_blank" rel="noreferrer" className="text-primary text-sm underline">View PDF</a>
+              <a href={`https://digibox-nipy.onrender.com${doc.gsDocument}`} target="_blank" rel="noreferrer" className="text-primary text-sm underline">View PDF</a>
             </div>
           ))}
         </div>

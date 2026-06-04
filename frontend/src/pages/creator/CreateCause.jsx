@@ -48,7 +48,7 @@ const CreateCause = () => {
     const fetchHierarchy = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/admin/gs-hierarchy",
+          "https://digibox-nipy.onrender.com/api/admin/gs-hierarchy",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setHierarchy(res.data || {});
@@ -154,7 +154,7 @@ const CreateCause = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.post("http://localhost:5000/api/cause/create", data, {
+      await axios.post("https://digibox-nipy.onrender.com/api/cause/create", data, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

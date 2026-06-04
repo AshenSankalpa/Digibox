@@ -46,7 +46,7 @@ const CompletedCauses = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get("http://localhost:5000/api/donor/causes/completed", {
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/donor/causes/completed", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

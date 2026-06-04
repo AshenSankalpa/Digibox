@@ -15,7 +15,7 @@ const PublishCauses = () => {
   const fetchApprovedCauses = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/approved-causes",
+        "https://digibox-nipy.onrender.com/api/admin/approved-causes",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -30,7 +30,7 @@ const PublishCauses = () => {
   const publishCause = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/publish/${id}`,
+        `https://digibox-nipy.onrender.com/api/admin/publish/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

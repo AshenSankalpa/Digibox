@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/api/admin/analytics", {
+      .get("https://digibox-nipy.onrender.com/api/admin/analytics", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setStats(res.data))
@@ -24,7 +24,7 @@ const AdminDashboard = () => {
       .finally(() => setLoadingStats(false));
 
     axios
-      .get("http://localhost:5000/api/admin/analytics/pie", {
+      .get("https://digibox-nipy.onrender.com/api/admin/analytics/pie", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -46,7 +46,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const params = status !== "all" ? { status } : {};
-      const res = await axios.get("http://localhost:5000/api/admin/causes", {
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/admin/causes", {
         headers: { Authorization: `Bearer ${token}` },
         params,
       });

@@ -9,7 +9,7 @@ const MyCauses = () => {
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/cause/my-causes", {
+        const res = await axios.get("https://digibox-nipy.onrender.com/api/cause/my-causes", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -141,7 +141,7 @@ const MyCauses = () => {
 
                 {/* Evidence File link */}
                 <a
-                  href={`http://localhost:5000${cause.evidenceFile}`}
+                  href={`https://digibox-nipy.onrender.com${cause.evidenceFile}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary mt-3 inline-block underline hover:text-secondary"

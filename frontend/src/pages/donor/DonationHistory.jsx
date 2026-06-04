@@ -37,7 +37,7 @@ const DonationHistory = () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get("http://localhost:5000/api/donor/history", {
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/donor/history", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

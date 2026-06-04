@@ -9,7 +9,7 @@ const AdminStructure = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/admin/admin-structure", {
+      .get("https://digibox-nipy.onrender.com/api/admin/admin-structure", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setData(res.data))

@@ -19,7 +19,7 @@ const ApproveCauses = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/causes/admin-dashboard",
+        "https://digibox-nipy.onrender.com/api/admin/causes/admin-dashboard",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setCauses(res.data);
@@ -46,7 +46,7 @@ const ApproveCauses = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/admin/causes/${id}/admin-action`,
+        `https://digibox-nipy.onrender.com/api/admin/causes/${id}/admin-action`,
         payload,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -105,7 +105,7 @@ const ApproveCauses = () => {
             <p>
               Evidence:{" "}
               <a
-                href={`http://localhost:5000${c.evidenceFile}`}
+                href={`https://digibox-nipy.onrender.com${c.evidenceFile}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline text-blue-400"

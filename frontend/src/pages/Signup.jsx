@@ -40,7 +40,7 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", formData);
+      await axios.post("https://digibox-nipy.onrender.com/api/auth/signup", formData);
       setSuccess("Account created successfully!");
       setError("");
       setTimeout(() => navigate("/login"), 1500);

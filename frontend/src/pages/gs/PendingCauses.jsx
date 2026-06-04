@@ -43,7 +43,7 @@ const PendingCauses = () => {
 
   const fetchPending = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gs/pending-causes", {
+      const res = await axios.get("https://digibox-nipy.onrender.com/api/gs/pending-causes", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCauses(res.data);
@@ -390,7 +390,7 @@ const PendingCauses = () => {
         const pdfBase64 = doc.output('datauristring');
 
         await axios.put(
-          `http://localhost:5000/api/gs/approve/${selectedCause._id}`,
+          `https://digibox-nipy.onrender.com/api/gs/approve/${selectedCause._id}`,
           {
             verificationNotes: notes,
             signatureImage: reader.result,
@@ -423,7 +423,7 @@ const PendingCauses = () => {
     setIsRejecting(true);
     try {
       await axios.put(
-        `http://localhost:5000/api/gs/reject/${selectedCause._id}`,
+        `https://digibox-nipy.onrender.com/api/gs/reject/${selectedCause._id}`,
         { reason },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -470,7 +470,7 @@ const PendingCauses = () => {
                   <td className="p-3 text-center">LKR {c.requiredAmount}</td>
                   <td className="p-3 text-center">
                     <a
-                      href={`http://localhost:5000${c.evidenceFile}`}
+                      href={`https://digibox-nipy.onrender.com${c.evidenceFile}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-primary underline hover:text-primary-light"
@@ -548,7 +548,7 @@ const PendingCauses = () => {
               <div className="border-t border-gray-600 pt-3">
                 <p className="text-gray-300 font-semibold mb-2">📄 Evidence File</p>
                 <a
-                  href={`http://localhost:5000${selectedCause.evidenceFile}`}
+                  href={`https://digibox-nipy.onrender.com${selectedCause.evidenceFile}`}
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary underline hover:text-primary-light"
