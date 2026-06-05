@@ -1,14 +1,38 @@
-# DigiBox - Digital Community Fundraising Platform with Trust and Transparancy
+<div align="center">
 
-![DigiBox Banner](https://img.shields.io/badge/DigiBox-Community%20Fundraising-8B5CF6?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+# 🌟 DigiBox
 
-## 🌟 Overview
+### Digital Community Fundraising Platform with Trust and Transparency
 
-DigiBox is a comprehensive digital fundraising platform designed to streamline community-based charitable cause management. The system connects cause creators with donors through a secure, transparent, and efficient three-tier approval workflow involving Grama Seva (GS) Officers, Divisional Secretaries (DS), and Administrators.
+[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-digibox.kalvexit.com-FF0000?style=for-the-badge)](https://digibox.kalvexit.com)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)]()
 
-Built with modern web technologies, DigiBox ensures proper verification, documentation, and tracking of every fundraising initiative from submission to completion.
+*A comprehensive digital fundraising platform connecting cause creators with donors through a secure, transparent, and efficient three-tier approval workflow.*
+
+</div>
+
+---
+
+## 🚀 Live Demo & Access
+
+Experience the platform live at: **[https://digibox.kalvexit.com](https://digibox.kalvexit.com)**
+
+### 🔐 Demo Credentials
+
+Use the following credentials to access the admin dashboard and explore the platform's capabilities:
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Admin** | `admin@example.com` | `Admin@123` |
+
+> **Note:** The platform includes multiple roles (GS Officer, DS Officer, Creator, Donor) which can be managed via the Admin dashboard.
+
+---
+
+## 📖 Overview
+
+DigiBox is built with modern web technologies to ensure proper verification, documentation, and tracking of every fundraising initiative from submission to completion.
 
 ---
 
